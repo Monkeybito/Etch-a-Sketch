@@ -8,5 +8,16 @@
 <div class="container"></div>
 </body>
 <script>
+const container = document.querySelector(".container");
+let colors = ["red", "blue", "green", "yellow", "pink", "black", "brown", "LightSalmon", "Fuchsia", "Purple", "BlueViolet", "Lime", "Teal", "Cyan", "Navy", "Gray"]
+
+for (let i = 0; i < 16; i++){
+    let div = document.createElement("div");
+    div.style.backgroundColor = colors[0];
+    div.style.width = "150px";
+    div.style.height= "150px";
+    colors.shift();
+    container.appendChild(div)  
+};
 </script>
 </html>

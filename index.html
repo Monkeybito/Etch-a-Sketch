@@ -11,6 +11,11 @@
 <script>
 const container = document.querySelector(".container");
 
+function remover(){
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+};
 
 for (let i = 0; i < 256; i++){
     let div = document.createElement("div");
@@ -22,7 +27,7 @@ for (let i = 0; i < 256; i++){
     container.appendChild(div);
 };
 
-const divs = document.querySelectorAll(".square");
+let divs = document.querySelectorAll(".square");
 divs.forEach(div => div.addEventListener("mouseover", function(div){
     this.style.backgroundColor = "red";
 }, {once: true}));

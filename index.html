@@ -23,6 +23,8 @@ for (let i = 0; i < 256; i++){
 };
 
 const divs = document.querySelectorAll(".square");
-divs.forEach()
+divs.forEach(div => div.addEventListener("mouseover", function(div){
+    this.style.backgroundColor = "red";
+}, {once: true}));
 </script>
 </html>

@@ -40,6 +40,18 @@ function newsquares(){
     }
     divs.forEach(div => div.remove());
 
+    for (let j = 0; j < squares; j++){
+        for (let i = 0; i < squares; i++){
+            let div = document.createElement("div");
+            div.classList.add("square");
+            container.appendChild(div);
+
+    }
+    }
+
+    divs = document.querySelectorAll(".square");
+    divs.forEach(div => div.addEventListener("mouseover", function(div){
+    this.style.backgroundColor = "red";}));
 
 }
 

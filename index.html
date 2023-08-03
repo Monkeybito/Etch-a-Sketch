@@ -10,15 +10,19 @@
 </body>
 <script>
 const container = document.querySelector(".container");
-let colors = ["red", "blue", "green", "yellow", "pink", "black", "brown", "LightSalmon", "Fuchsia", "Purple", "BlueViolet", "Lime", "Teal", "Cyan", "Navy", "Gray"]
 
-for (let i = 0; i < 16; i++){
+
+for (let i = 0; i < 256; i++){
     let div = document.createElement("div");
-    div.style.backgroundColor = colors[0];
-    div.style.width = "150px";
-    div.style.height= "150px";
-    colors.shift();
-    container.appendChild(div)  
+    div.style.border = "solid";
+    div.style.borderColor= "black"
+    div.style.width = "100px";
+    div.style.height= "100px";
+    div.classList.add("square");
+    container.appendChild(div);
 };
+
+const divs = document.querySelectorAll(".square");
+divs.forEach()
 </script>
 </html>

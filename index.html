@@ -6,23 +6,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<button type="button">Do you want to change the amount of Squares? Click Me!</button>
 <div class="container"></div>
 </body>
 <script>
 const container = document.querySelector(".container");
 
-function remover(){
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-};
-
 for (let i = 0; i < 256; i++){
     let div = document.createElement("div");
-    div.style.border = "solid";
-    div.style.borderColor= "black"
-    div.style.width = "100px";
-    div.style.height= "100px";
     div.classList.add("square");
     container.appendChild(div);
 };
@@ -30,6 +21,27 @@ for (let i = 0; i < 256; i++){
 let divs = document.querySelectorAll(".square");
 divs.forEach(div => div.addEventListener("mouseover", function(div){
     this.style.backgroundColor = "red";
-}, {once: true}));
+}));
+
+const button = document.querySelector("button")
+button.addEventListener("click", function(button){
+    newsquares();
+});
+
+function newsquares(){
+    let squares = parseInt(prompt("Choose a number between 1 - 100 to create a new grid system."));
+    if (squares > 100 || squares < 1 ){
+        alert("Please enter a number between 1 - 100!")
+        return;
+    }
+    else if (isNaN(squares)){
+        alert("Please enter a number!")
+        return;
+    }
+    divs.forEach(div => div.remove());
+
+
+}
+
 </script>
 </html>
